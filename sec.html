@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <link rel="stylesheet" href="sec.css"
+            <div class="wrap">
+                    <a href=" file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit%20user%20files/frdrnrb.html">Exit</a>
+                    <div class="wrapper">
+                <div class="con">Balin wants you to do for her the following:</div>
+                <p>Kung naa kay di ganahan e comment lang sa comment section🙂</p>
+                <p>1. Kuan kanang dapat e reassure ko nimo ka usa or ka duhas isa ka buwan hahah</p>
+                <p>2. Sultii ko ug mga words of affirmation HAHAHAH</p>
+                <p>3. Kumustaha ko any random days</p>
+                <p>4. Kanang monthsary nato dapat e greet ko nimo nya pag note ug pila nata ka months HAHAHAHAH(optional)</p>
+                <p>5. Kung mag uban ta dapat naa tay pic or tiktok para naa tay ika myday ug memories</p>
+                <p>6. Kanang i hatod ko nimos gate dapat i hug ko nimo HAHAHS(pero kung naay taw, di lang)</p>
+                <p>7. E comfort ko (or e kiss) everytime na kapoyon or ma sad ko😢😂</p>
+                <p>8. Mag streak ta sa tiktok(pero kung dika, ayaw)</p>
+                <p>9. Ikaw nya tig alsa ug tubig kung mahurot na akong tubig sa taas(favor)</p>
+                <p>10. Kung manglood ko dapat palitan ko nimog balut(duhaa)</p>
+                <p>11. Kanang mag laag ta, pasagdi ko nga akoy bayad or di tunga ta</p>
+                <p>12. unja kuan pud e profile kos pisbok(joke, ayaw jud)</p>
+               <p>13. Kung naa kay kalain or unsa, isulti nako dayon(kahit masakit😔)</p>
+               
+               <p>14. Nya mao to mahalin mo lang ako at maging totoo ka</p>
+               <p>15. Okay na kaayu na👍</p>
+               <p>16. aylabyuuuu🥰🥰🥰 hshshsh</p>
+               
+                    </div>
+                    
+    <title>Comment Box</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        .comment-box{
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            width: 250px;
+            height:100px;
+            max-width: 400px;
+            margin:auto;
+            box-shadow: 0 0 5px rgba(0,0,0,.2);
+            margin-left:5px;
+        }
+
+        #commentInput{
+            width: 100%;
+            height:20 px;
+            padding: 5px;
+            border-radius: 4px;
+            border:1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        button{
+            padding: 10px;
+            width: 100%;
+            background: #3498db;
+            border: none;
+            color:white;
+            border-radius: 4px;
+            cursor:pointer;
+        }
+
+        .comments{
+            margin-top: 15px;
+        }
+
+        .comment{
+            background:#fff;
+            padding:8px;
+            border-radius:4px;
+            margin-bottom:7px;
+            box-shadow: 0 0 5px rgba(0,0,0,.2);
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+
+        .del-btn{
+            background:#e74c3c;
+            border:none;
+            color:white;
+            padding:5px 8px;
+            border-radius:3px;
+            cursor:pointer;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="comment-box">
+    <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+    <button onclick="saveComment()">Post Comment</button>
+</div>
+
+<div class="comments" id="comments"></div>
+
+<script>
+    let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+    function displayComments(){
+        const commentsDiv = document.getElementById("comments");
+        commentsDiv.innerHTML = "";
+        comments.forEach((c,index)=>{
+            commentsDiv.innerHTML += `
+                <div class="comment">
+                    <span>${c}</span>
+                    <button class="del-btn" onclick="deleteComment(${index})">Delete</button>
+                </div>
+            `;
+        });
+    }
+
+    function saveComment(){
+        const text = document.getElementById("commentInput").value;
+        if(text.trim() === "") return;
+        comments.push(text);
+        localStorage.setItem("comments", JSON.stringify(comments));
+        document.getElementById("commentInput").value = "";
+        displayComments();
+    }
+
+    function deleteComment(i){
+        comments.splice(i,1);
+        localStorage.setItem("comments", JSON.stringify(comments));
+        displayComments();
+    }
+
+    displayComments();
+</script>
+
+    <title>Simple Button</title>
+    <style>
+        .myButton{
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left:20px;
+            width:200px;
+        }
+
+        .myButton:hover{
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<a href="4rth.html" class="myButton">Done</a>
+
+
+
+        </body>
+    </head>
+</html>

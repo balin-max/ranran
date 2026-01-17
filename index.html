@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="frdrnrb.css">
+<body>
+      
+    <h1>Dranreb's to do list for balin (2026)</h1>
+    <form id="password-form">
+      <input type="password" id="password" placeholder="Enter password to access">
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+  
+
+  <script>
+    const form = document.getElementById('password-form');
+    const passwordInput = document.getElementById('password');
+    const correctPassword = '032925'; 
+    const redirectUrl = 'file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit%20user%20files/frdrnreb/balin/sec.html'; 
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const enteredPassword = passwordInput.value;
+      if (enteredPassword === correctPassword) {
+        window.location.href = redirectUrl;
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
